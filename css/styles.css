@@ -23,15 +23,15 @@ aside a{
 }
 
 form {
-    border: 5px dashed  brown;
-    padding: 5px;
+    border: 0.5rem dashed  brown;
+    padding: 0.5rem;
 }
 
 button{
 
  width: 50%;
  display: block;
- height: 2em;
+ height: 0.2rem;
 }
 
 [text]{
@@ -46,10 +46,10 @@ nav ul li {
 }
 nav ul li a {
     color: indigo;
-    border: 2px solid indigo;
+    border: 0.1rem solid indigo;
     text-decoration: none;
     background-color: cornsilk;
-    padding: 5px;
+    padding: 0.25rem;
 }
 nav ul li a:hover{
     border-color: cornsilk;
@@ -78,31 +78,51 @@ textarea{
 fieldset{
     border: none;
 }
+html{
+    font: normal normal normal 20px/1.5 arial, heltvetica,;
+
+}
 
 body {
-    font: normal normal normal 12px/1.5;
+    
     background-color: hsla(268, 68%, 70%, 68%);
     width: 100vw;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
+
+h1{
+    color: blueviolet;
+    
+}
+
 h2 {
     color: #f02;
-    font-size: 2em;
+    font-size : 2rem;
 }
 
 header{
     background-color: hsl(200, 78%, 34%);
 }
 
+section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
 main {
-    float:left;
+    flex: 2 1 70%;
     width:65vw;
     background-color: hsl(109, 84%, 47%);
 
 }
 
 aside {
-    float:right;
+    flex : 1 1 30%;
     width:25vw;
     background-color: hsl(343, 85%, 26%);
 }
@@ -111,12 +131,12 @@ aside a:hover{
     color: #f02;
 }
 footer{
-    clear:both;
+    
     background-color: hsl(243, 73%, 62%);
 }
 .structural {
-    padding: 10px;
-    margin: 10px;
+    padding: 1rem;
+    margin: 1rem;
     border: 2px solid black;
 }
 
@@ -131,4 +151,32 @@ a:hover{
 }
 footer p{
     font-size: -75em;
+}
+
+img{
+    width: 80%;
+    height: 80%;
+}
+figure{
+    border: 0.1em solid black;
+}
+#gallery{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 0.5rem;
+    column-gap: 0.5rem;
+}
+
+@media (max-width : 600px){
+    html{
+        font-size: 10px;
+    }
+    #gallery {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+    section {
+        display: block;
+    }
 }
